@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     url(r'^$', 'chaordicspaces.core.views.home', name='home'),
     url(r'^subscription/new/$', 'chaordicspaces.core.views.subscription_new', name='subscription_new'),
     url(r'^admin/', include(admin.site.urls)),
-    url('', include('social.apps.django_app.urls', namespace='social'))
+    url('', include('social.apps.django_app.urls', namespace='social')),
 )
