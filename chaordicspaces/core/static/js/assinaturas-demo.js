@@ -1,3 +1,34 @@
+/* Contribution class inheriting from Subscription so we can add amount */
+var Contribution = function() {};
+Contribution.prototype.with_amount = function(amount) {
+  this.amount = amount;
+  return this;
+};
+Contribution.is_new_customer = !1;
+Contribution.prototype.with_customer = function (a) {
+  this.customer = a;
+  return this
+};
+Contribution.prototype.with_new_customer = function (a) {
+  this.customer = new Customer(a) || new Customer;
+  this.is_new_customer = true;
+  return this
+};
+Contribution.prototype.with_plan_code = function (a) {
+  this.plan_code = a;
+  return this
+};
+Contribution.prototype.with_code = function (a) {
+  this.code = a;
+  return this
+};
+Contribution.prototype.to_json = function () {
+  c = {code: this.code, amount: this.amount, plan: {code: this.plan_code}, customer: this.customer.to_json()};
+  //console.debug(c);
+  return c;
+};
+
+
 $(document).ready(function(){
 
   $("#assinar").click(function(){
@@ -12,12 +43,14 @@ $(document).ready(function(){
     var moip = new MoipAssinaturas(token); 
     var customer = build_customer();
     var subscription_code = new Date().getTime(); // INFORME AQUI UM CÓDIGO PARA ESSA ASSINATURA
+    var amount = $("#amount").val();
 
     moip.subscribe(
-        new Subscription()
+        new Contribution()
             .with_code(subscription_code)
             .with_new_customer(customer)
             .with_plan_code(plan_code)
+            .with_amount(amount)
     ).callback(function(response){
         if (response.has_errors()) {
             $("#erros").empty();
