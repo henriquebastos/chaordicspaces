@@ -112,3 +112,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
 )
+
+# MOIP
+MOIP_TOKEN = config('MOIP_TOKEN')
+MOIP_PLAN = config('MOIP_PLAN')

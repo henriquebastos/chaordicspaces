@@ -7,8 +7,8 @@
   </div>
 
   <form class="form-horizontal" method="post">
-    <input type="hidden" id="token" value="{{ token }}">
-    <input type="hidden" id="plan_code" value ="{{ plan_code }}">
+    <input type="hidden" id="token" value="{{ MOIP_TOKEN }}">
+    <input type="hidden" id="plan_code" value ="{{ MOIP_PLAN }}">
 
     <div class="tabbable"> <!-- Only required for left/right tabs -->
       <ul class="nav nav-tabs">
@@ -133,6 +133,13 @@
           </div>
 
           <legend>Informações de Cobrança</legend>
+
+          <div class="control-group">
+            <label class="control-label" for="amount">Quantia</label>
+            <div class="controls">
+              <input id="amount" maxlength="6" name="amount" placeholder="Em centavos. ex: R$ 1 => 100" type="text">
+            </div>
+          </div>
 
           <div class="control-group">
             <label class="control-label" for="holder_name">Nome do Portador</label>
