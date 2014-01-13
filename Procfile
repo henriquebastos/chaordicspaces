@@ -1,2 +1,2 @@
-web: gunicorn lab89.wsgi
+web: gunicorn chaordicspaces.wsgi
 
