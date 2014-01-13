@@ -18,7 +18,11 @@
 
     <div class="masthead">
       <ul class="nav nav-pills pull-right">
-        <li><a href="https://www.facebook.com/groups/546525725440254/">Quem Somos</a></li>
+        {% if not user.is_authenticated %}
+          <li><a href="https://www.facebook.com/groups/546525725440254/">Quem Somos</a></li>
+        {% else %}
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% endif %}
       </ul>
       <h3 class="muted">Construindo em Rede</h3>
     </div>
