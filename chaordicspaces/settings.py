@@ -1,6 +1,6 @@
 # coding: utf-8
 """
-Django settings for lab89 project.
+Django settings for chaordicspaces project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
-    'lab89.core',
+    'chaordicspaces.core',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,9 +52,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'lab89.urls'
+ROOT_URLCONF = 'chaordicspaces.urls'
 
-WSGI_APPLICATION = 'lab89.wsgi.application'
+WSGI_APPLICATION = 'chaordicspaces.wsgi.application'
 
 
 # Database

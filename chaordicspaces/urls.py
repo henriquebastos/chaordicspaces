@@ -6,7 +6,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'lab89.core.views.home', name='home'),
+    url(r'^$', 'chaordicspaces.core.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url('', include('social.apps.django_app.urls', namespace='social'))
 )
