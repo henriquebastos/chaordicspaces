@@ -1,5 +1,11 @@
 {% extends 'core/base.html' %}
 
+{% block head %}
+  {{ block.super }}
+  <script type="text/javascript" src="{{ MOIP_URL }}moip-assinaturas.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/assinaturas-demo.js' %}"></script>
+{% endblock head %}
+
 {% block content %}
   <div class="alert alert-error hide" id="to-show">
     <ul id="erros">

@@ -12,4 +12,5 @@ def subscription_new(request):
     return render(request, 'core/subscription_new.html', {
         'MOIP_TOKEN': settings.MOIP_TOKEN,
         'MOIP_PLAN': settings.MOIP_PLAN,
+        'MOIP_URL': settings.MOIP_URL,
     })

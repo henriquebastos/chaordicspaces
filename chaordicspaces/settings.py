@@ -119,3 +119,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # MOIP
 MOIP_TOKEN = config('MOIP_TOKEN')
 MOIP_PLAN = config('MOIP_PLAN')
+MOIP_SANDBOX = config('MOIP_SANDBOX', default=False, cast=bool)
+MOIP_URL = 'https://sandbox.moip.com.br/' if MOIP_SANDBOX else 'https://api.moip.com.br/'
