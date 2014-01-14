@@ -42,7 +42,7 @@ $(document).ready(function(){
 
     var moip = new MoipAssinaturas(token); 
     var customer = build_customer();
-    var subscription_code = new Date().getTime(); // INFORME AQUI UM CÓDIGO PARA ESSA ASSINATURA
+    var subscription_code = $("#subscription_code").val();
     var amount = $("#amount").val();
 
     moip.subscribe(
@@ -98,9 +98,8 @@ $(document).ready(function(){
 
 var build_customer = function() {
     var customer_params = {
-        fullname: $("#fullname").val(),
         email: $("#email").val(),
-        code: slugify($("#fullname").val().toLowerCase()),
+        code: $("#customer_code").val(),
         fullname : $("#fullname").val(),
         cpf : $("#cpf").val(),
         birthdate_day : $("#birthdate_day").val(),
