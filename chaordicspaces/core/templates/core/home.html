@@ -2,12 +2,12 @@
 
 {% block content %}
   <div class="jumbotron">
-    <h1>Espaços Caórdicos</h1>
+    <h1>Laboriosa 89</h1>
   </div>
 
   <div class="jumbotron">
     {% if not user.is_authenticated %}
-      <p>Entre com o Facebook e faça sua contribuição para a manutenção dos espaços de livre interação.</p>
+      <p>Entre com o Facebook e faça sua contribuição recorrente para a manutenção do Lab89.</p>
       <br>
       <a href="{% url 'social:begin' backend=backends.backends.0 %}" class="btn btn-large btn-primary">Login com Facebook</a>
     {% else %}
