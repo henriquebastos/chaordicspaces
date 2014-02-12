@@ -31,7 +31,13 @@ Contribution.prototype.to_json = function () {
 
 $(document).ready(function(){
 
-  $("#assinar").click(function(){
+  $("#assinar").click(function(event){
+    // Avoid double clicks
+    if (this.disabled) {
+      event.preventDefault();
+    }
+    this.disabled = true;
+
     var token = $("#token").val();// COLOQUE AQUI O SEU TOKEN
     var plan_code = $("#plan_code").val(); // INFORME AQUI UM CÓDIGO DE UM PLANO SEU
 
@@ -65,8 +71,8 @@ $(document).ready(function(){
           $("#erros").append("<li><strong>Próxima Cobrança:</strong> " + response.next_invoice_date.day + "/" + response.next_invoice_date.month + "/" + response.next_invoice_date.year + "</li>");
           $("#erros").append("<li><strong>Status do pagamento:</strong> " + response.invoice.status.description + "</li>");
           $("#erros").append("<li><strong>Status: </strong> " + response.status + "</li>")
-
         }
+        $("#assinar")[0].disabled=false;
     });
   });
 
