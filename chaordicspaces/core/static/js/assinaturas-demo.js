@@ -61,7 +61,12 @@ $(document).ready(function(){
         if (response.has_errors()) {
             $("#erros").empty();
             for (i = 0; i < response.errors.length; i++) {
-              var erro = response.errors[i].description;
+              if (response.errors[i].code == "MA33") {
+                var erro = "Você já é assinante. Se deseja alterar sua assinatura, entre em contato carl@amorim.blog.br";
+              }
+              else {
+                var erro = response.errors[i].description;
+              }
               $("#erros").append("<li>" + erro + "</li>");
               $(".alert").fadeIn();
             }
