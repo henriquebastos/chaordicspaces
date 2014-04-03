@@ -3,9 +3,25 @@ Usage
 
 .. code-block:: console
 
-    django-admin.py startproject --template=https://github.com/henriquebastos/dj-kickstart/archive/master.zip -e py,env -n Procfile PROJECTNAME
-    mv rename-as-.env .env
+    git clone https://github.com/henriquebastos/chaordicspages
+    cd chaordicspaces
+    mv dotenv-sample .env
     pip install -r requirements.txt
+    python manage.py syncdb
+    python manage.py runserver
+
+
+Deploy
+======
+
+.. code-block:: console
+
+    heroku create APPNAME
+    heroku plugins:install git://github.com/ddollar/heroku-config.git
+    heroku config:push
+    git push heroku master
+    heroku run python manage.py syncdb
+
 
 License
 -------
