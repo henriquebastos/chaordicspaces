@@ -12,6 +12,6 @@
 *.swp
 *.sqlite3
 .DS_Store
-/.env
+*.env
 staticfiles/
 .idea/
